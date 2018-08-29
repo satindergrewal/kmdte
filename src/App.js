@@ -15,13 +15,39 @@ import {
   DropdownItem
 } from 'reactstrap';
 
+let tokenlist = [
+  "012d1e11dd98e5963c49895640d6cc6ed5d24a30cbe07fa4aeaf45618cbaa9c9",
+  "b2c7b72667b50583dbbd1854f570659d2861ee10dba82b212ca2c1ee13166e3b",
+  "456775c134bf72267c9ff92c4cdbaac977b4c2b727bdab78be775143df93c90d",
+  "ccaf9a627f41b91dd53325c4d67cae99746c5d61bf420255af0b06dfa40fd4ad"
+]
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      tokenlist: tokenlist,
+    };
+  }
+  
+  render() {
+    return (
+      <div>
+        <TopNavMenu />
+        <TokenListTable />
+      </div>
+    );
+  }
+}
+
+class TopNavMenu extends Component {
   constructor(props) {
     super(props);
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
   }
   toggle() {
@@ -64,8 +90,25 @@ class App extends Component {
           </Collapse>
         </Navbar>
       </div>
-      
-    );
+    )
+  }
+}
+
+class TokenListTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      tokenlist: tokenlist,
+    }
+  }
+  render() {
+    return (
+      <div>
+        {this.state.tokenlist.map(item =>
+          <div>{item}</div>
+        )}
+      </div>
+    )
   }
 }
 

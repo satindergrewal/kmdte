@@ -12,10 +12,14 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem
+  DropdownItem,
+  Button,
+  Table
 } from 'reactstrap';
+import ReactTable from 'react-table';
+import "react-table/react-table.css";
 
-let tokenlist = [
+const tokenlist = [
   "012d1e11dd98e5963c49895640d6cc6ed5d24a30cbe07fa4aeaf45618cbaa9c9",
   "b2c7b72667b50583dbbd1854f570659d2861ee10dba82b212ca2c1ee13166e3b",
   "456775c134bf72267c9ff92c4cdbaac977b4c2b727bdab78be775143df93c90d",
